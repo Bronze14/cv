@@ -5,13 +5,157 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Marcin Daduń - Junior Frontend Developer</title>
   <style>
-    /* ... (twój istniejący CSS bez zmian, pominięty tutaj dla czytelności) ... */
-    /* Dodajemy ewentualnie klasę .link (opcjonalnie, jeśli nie używasz inline-style) */
-    a.link {
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #2c3e50;
+      margin: 0;
+      padding: 0;
+    }
+
+    .print-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 60px auto 40px;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      background-color: #2c3e50;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      border-radius: 50%;
+      line-height: 100px;
+      margin: 0 auto 15px;
+    }
+
+    .name {
+      font-size: 32px;
+      margin: 0;
+    }
+
+    .title {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+    }
+
+    .contact-item {
+      margin: 5px 0;
+    }
+
+    .main-content {
+      margin-top: 20px;
+    }
+
+    .card {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .card-title {
+      font-size: 24px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .experience-item,
+    .education-item,
+    .project-item {
+      margin-bottom: 20px;
+    }
+
+    .job-title,
+    .degree-title,
+    .project-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .company,
+    .school,
+    .project-tech,
+    .date {
+      font-size: 14px;
+      color: #888;
+      margin: 5px 0;
+    }
+
+    .description {
+      font-size: 15px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      background-color: #ecf0f1;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    .languages,
+    .hobbies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .language-item,
+    .hobby-tag {
+      background-color: #ecf0f1;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    .language-level {
+      margin-left: 5px;
+      color: #555;
+    }
+
+    .card.full-width {
+      border-bottom: none;
+    }
+
+    a {
       color: #2c3e50;
       text-decoration: none;
     }
-    a.link:hover {
+
+    a:hover {
       text-decoration: underline;
     }
   </style>
@@ -25,36 +169,19 @@
       <h1 class="name">Marcin Daduń</h1>
       <p class="title">Junior Frontend Developer</p>
       <div class="contact-info">
+        <div class="contact-item">📧 marcindadek@gmail.com</div>
+        <div class="contact-item">📱 +48 888 143 053</div>
+        <div class="contact-item">📍 Cieszyn, Poland</div>
         <div class="contact-item">
-          <span>📧</span>
-          <span>marcindadek@gmail.com</span>
-        </div>
-        <div class="contact-item">
-          <span>📱</span>
-          <span>+48 888 143 053</span>
-        </div>
-        <div class="contact-item">
-          <span>📍</span>
-          <span>Cieszyn, Poland</span>
-        </div>
-        <div class="contact-item">
-          <span>💼</span>
-          <span>
-            GitHub:
-            <a href="https://github.com/Bronze14" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: underline;">
-              github.com/Bronze14
-            </a>
-          </span>
+          💼 GitHub:
+          <a href="https://github.com/Bronze14" target="_blank">github.com/Bronze14</a>
         </div>
       </div>
     </div>
 
     <div class="main-content">
       <div class="card">
-        <h2 class="card-title">
-          <span class="card-icon">💼</span>
-          Work Experience
-        </h2>
+        <h2 class="card-title">💼 Work Experience</h2>
         <div class="experience-item">
           <h3 class="job-title">Junior Developer</h3>
           <p class="company">ScandiWeb</p>
@@ -76,35 +203,25 @@
       </div>
 
       <div class="card">
-        <h2 class="card-title">
-          <span class="card-icon">🚀</span>
-          Projects
-        </h2>
+        <h2 class="card-title">🚀 Projects</h2>
         <div class="project-item">
           <h3 class="project-title">
-            <a href="https://www.domowepaczki.pl" target="_blank" rel="noopener noreferrer" style="color: #2c3e50; text-decoration: none;">
-              domowepaczki.pl
-            </a>
+            <a href="https://www.domowepaczki.pl" target="_blank">domowepaczki.pl</a>
           </h3>
           <p class="project-tech">Next.js, React</p>
           <p class="description">Web application for home made donuts.</p>
         </div>
         <div class="project-item">
           <h3 class="project-title">
-            <a href="https://md-portfolioo.netlify.app/" target="_blank" rel="noopener noreferrer" style="color: #2c3e50; text-decoration: none;">
-              Portfolio Website
-            </a>
+            <a href="https://md-portfolioo.netlify.app/" target="_blank">Portfolio Website</a>
           </h3>
           <p class="project-tech">HTML, CSS, JavaScript</p>
-          <p class="description">Responsive portfolio website showcasing projects and skills. Utilized modern CSS techniques and JavaScript to create interactive user experience.</p>
+          <p class="description">Responsive portfolio website showcasing projects and skills.</p>
         </div>
       </div>
 
       <div class="card">
-        <h2 class="card-title">
-          <span class="card-icon">⚡</span>
-          Technical Skills
-        </h2>
+        <h2 class="card-title">⚡ Technical Skills</h2>
         <div class="skills">
           <span class="skill-tag">JavaScript</span>
           <span class="skill-tag">React</span>
@@ -124,10 +241,7 @@
       </div>
 
       <div class="card">
-        <h2 class="card-title">
-          <span class="card-icon">🎓</span>
-          Education
-        </h2>
+        <h2 class="card-title">🎓 Education</h2>
         <div class="education-item">
           <h3 class="degree-title">Computer Science</h3>
           <p class="school">WSB University (Wyższa Szkoła Bankowa)</p>
@@ -137,27 +251,15 @@
       </div>
 
       <div class="card">
-        <h2 class="card-title">
-          <span class="card-icon">🌍</span>
-          Languages
-        </h2>
+        <h2 class="card-title">🌍 Languages</h2>
         <div class="languages">
-          <div class="language-item">
-            <span>Polish</span>
-            <span class="language-level">Native</span>
-          </div>
-          <div class="language-item">
-            <span>English</span>
-            <span class="language-level">C1</span>
-          </div>
+          <div class="language-item">Polish <span class="language-level">Native</span></div>
+          <div class="language-item">English <span class="language-level">C1</span></div>
         </div>
       </div>
 
       <div class="card">
-        <h2 class="card-title">
-          <span class="card-icon">🎯</span>
-          Interests
-        </h2>
+        <h2 class="card-title">🎯 Interests</h2>
         <div class="hobbies">
           <span class="hobby-tag">Programming</span>
           <span class="hobby-tag">New Technologies</span>
