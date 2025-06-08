@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcin Daduń - Junior Frontend Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 30px 20px;
+        }
+        
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.3);
+            margin: 0 auto 20px;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        
+        .name {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .title {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9em;
+        }
+        
+        .main-content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .card-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card-icon {
+            font-size: 1.2em;
+        }
+        
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .job-title, .degree-title, .project-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.05em;
+            margin-bottom: 5px;
+        }
+        
+        .company, .school, .project-tech {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .date {
+            color: #7f8c8d;
+            font-size: 0.85em;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+        
+        .description {
+            color: #555;
+            line-height: 1.5;
+            font-size: 0.95em;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+        
+        .languages {
+            display: grid;
+            gap: 8px;
+        }
+        
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid #27ae60;
+        }
+        
+        .language-level {
+            background: #27ae60;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+        
+        .hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .hobby-tag {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 18px;
+            font-size: 0.8em;
+        }
+        
+        .objectives {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .objectives p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: none;
+                margin: 0;
+            }
+            
+            .card {
+                box-shadow: none;
+            }
+            
+            .card:hover {
+                transform: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .name {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">📄 Save as PDF</button>
+    
+    <div class="container">
+        <div class="header">
+            <div class="profile-img">MD</div>
+            <h1 class="name">Marcin Daduń</h1>
+            <p class="title">Junior Frontend Developer</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>marcindadun@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+48 123 456 789</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Cieszyn, Poland</span>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <span>GitHub: github.com/marcindadun</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="card">
+                <h2 class="card-title">
+                    <span class="card-icon">💼</span>
+                    Work Experience
+                </h2>
+                
+                <div class="experience-item">
+                    <h3 class="job-title">Junior Developer</h3>
+                    <p class="company">ScandiWeb</p>
+                    <p class="date">2023 - Present</p>
+                    <p class="description">Developing web applications using JavaScript, PHP, and CSS. Collaborating with development team, implementing new features, and optimizing existing code.</p>
+                </div>
+                
+                <div class="experience-item">
+                    <h3 class="job-title">Courier</h3>
+                    <p class="company">Courier Company</p>
+                    <p class="date">2022 - 2023</p>
+                    <p class="description">Package delivery, customer service, time management and route planning. Developing organizational and communication skills.</p>
+                </div>
+                
+                <div class="experience-item">
+                    <h3 class="job-title">Hotel Staff</h3>
+                    <p class="company">Hotel</p>
+                    <p class="date">2021 - 2022</p>
+                    <p class="description">Guest service, maintaining service quality, working in multicultural team environment. Developing communication skills and problem-solving abilities.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">
+                    <span class="card-icon">🚀</span>
+                    Projects
+                </h2>
+                
+                <div class="project-item">
+                    <h3 class="project-title">domowepaczki.pl</h3>
+                    <p class="project-tech">Next.js, React</p>
+                    <p class="description">Web application for home package management. Implemented responsive user interface using latest React and Next.js technologies. Project includes package management system, status tracking, and administrative panel.</p>
+                </div>
+                
+                <div class="project-item">
+                    <h3 class="project-title">Portfolio Website</h3>
+                    <p class="project-tech">HTML, CSS, JavaScript</p>
+                    <p class="description">Responsive portfolio website showcasing projects and skills. Utilized modern CSS techniques and JavaScript to create interactive user experience.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">
+                    <span class="card-icon">⚡</span>
+                    Technical Skills
+                </h2>
+                <div class="skills">
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Next.js</span>
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">SCSS</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Redux</span>
+                    <span class="skill-tag">Tailwind CSS</span>
+                    <span class="skill-tag">Material-UI</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">
+                    <span class="card-icon">🎓</span>
+                    Education
+                </h2>
+                <div class="education-item">
+                    <h3 class="degree-title">Computer Science</h3>
+                    <p class="school">WSB University (Wyższa Szkoła Bankowa)</p>
+                    <p class="date">2020 - 2024</p>
+                    <p class="description">Bachelor's degree in Computer Science. Gained fundamental knowledge in programming, databases, software engineering, and web technologies.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">
+                    <span class="card-icon">🌍</span>
+                    Languages
+                </h2>
+                <div class="languages">
+                    <div class="language-item">
+                        <span>Polish</span>
+                        <span class="language-level">Native</span>
+                    </div>
+                    <div class="language-item">
+                        <span>English</span>
+                        <span class="language-level">B2</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2 class="card-title">
+                    <span class="card-icon">🎯</span>
+                    Interests
+                </h2>
+                <div class="hobbies">
+                    <span class="hobby-tag">Programming</span>
+                    <span class="hobby-tag">New Technologies</span>
+                    <span class="hobby-tag">Sports</span>
+                    <span class="hobby-tag">Gaming</span>
+                    <span class="hobby-tag">Travel</span>
+                </div>
+            </div>
+            
+            <div class="card full-width">
+                <div class="objectives">
+                    <h2 style="margin-bottom: 15px; font-size: 1.3em;">🎯 Career Objectives</h2>
+                    <p>Passionate frontend developer with solid foundation in JavaScript and React. I strive for continuous skill development in modern web technologies and creating intuitive, responsive user interfaces. Seeking growth opportunities in a dynamic team as a Junior Frontend Developer.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
