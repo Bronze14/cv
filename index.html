@@ -1,281 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Marcin Daduń - Junior Frontend Developer</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #2c3e50;
-      margin: 0;
-      padding: 0;
-    }
-
-    .print-button {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      padding: 10px 20px;
-      background-color: #2c3e50;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      z-index: 1000;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 60px auto 40px;
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .profile-img {
-      width: 100px;
-      height: 100px;
-      background-color: #2c3e50;
-      color: white;
-      font-size: 40px;
-      font-weight: bold;
-      border-radius: 50%;
-      line-height: 100px;
-      margin: 0 auto 15px;
-    }
-
-    .name {
-      font-size: 32px;
-      margin: 0;
-    }
-
-    .title {
-      font-size: 18px;
-      color: #555;
-    }
-
-    .contact-info {
-      margin-top: 20px;
-    }
-
-    .contact-item {
-      margin: 5px 0;
-    }
-
-    .main-content {
-      margin-top: 20px;
-    }
-
-    .card {
-      margin-bottom: 30px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #ccc;
-    }
-
-    .card-title {
-      font-size: 24px;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .experience-item,
-    .education-item,
-    .project-item {
-      margin-bottom: 20px;
-    }
-
-    .job-title,
-    .degree-title,
-    .project-title {
-      font-weight: bold;
-      font-size: 18px;
-      margin: 0;
-    }
-
-    .company,
-    .school,
-    .project-tech,
-    .date {
-      font-size: 14px;
-      color: #888;
-      margin: 5px 0;
-    }
-
-    .description {
-      font-size: 15px;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skill-tag {
-      background-color: #ecf0f1;
-      padding: 5px 10px;
-      border-radius: 4px;
-    }
-
-    .languages,
-    .hobbies {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .language-item,
-    .hobby-tag {
-      background-color: #ecf0f1;
-      padding: 5px 10px;
-      border-radius: 4px;
-    }
-
-    .language-level {
-      margin-left: 5px;
-      color: #555;
-    }
-
-    .card.full-width {
-      border-bottom: none;
-    }
-
-    a {
-      color: #2c3e50;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>CV – Bronze14</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 40px; background: #f9f9f9; color: #222; }
+        .container { max-width: 800px; margin: auto; background: #fff; padding: 32px 40px; border-radius: 14px; box-shadow: 0 4px 24px #0001; }
+        h1 { font-size: 2.3em; margin-bottom: 0.2em; }
+        h2 { color: #1a73e8; margin-top: 2em; }
+        .contact, .skills, .projects, .experience, .education { margin-bottom: 2em; }
+        .contact-item { margin-bottom: 0.5em; }
+        a { color: #1a73e8; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .project-item, .exp-item { margin-bottom: 1.2em; }
+        .project-title { font-weight: bold; font-size: 1.1em; }
+        .project-tech { font-size: 0.95em; color: #555; margin-bottom: 0.2em; }
+        .description { font-size: 0.97em; }
+        @media (max-width: 600px) {
+            .container { padding: 18px 6px; }
+        }
+    </style>
 </head>
 <body>
-  <button class="print-button" onclick="window.print()">📄 Save as PDF</button>
+    <div class="container">
+        <h1>Michał Domański</h1>
+        <div class="contact">
+            <div class="contact-item">📧 <a href="mailto:twojemail@domena.pl">twojemail@domena.pl</a></div>
+            <div class="contact-item">📞 +48 123 456 789</div>
+            <div class="contact-item">
+                💼 <a href="https://github.com/Bronze14" target="_blank">GitHub: github.com/Bronze14</a>
+            </div>
+            <div class="contact-item">
+                🌐 <a href="https://md-portfolioo.netlify.app/" target="_blank">Portfolio: md-portfolioo.netlify.app</a>
+            </div>
+        </div>
 
-  <div class="container">
-    <div class="header">
-      <div class="profile-img">MD</div>
-      <h1 class="name">Marcin Daduń</h1>
-      <p class="title">Junior Frontend Developer</p>
-      <div class="contact-info">
-        <div class="contact-item">📧 marcindadek@gmail.com</div>
-        <div class="contact-item">📱 +48 888 143 053</div>
-        <div class="contact-item">📍 Cieszyn, Poland</div>
-        <div class="contact-item">
-          💼 GitHub:
-          <a href="https://github.com/Bronze14" target="_blank">github.com/Bronze14</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="main-content">
-      <div class="card">
-        <h2 class="card-title">💼 Work Experience</h2>
-        <div class="experience-item">
-          <h3 class="job-title">Junior Developer</h3>
-          <p class="company">ScandiWeb</p>
-          <p class="date">2023 - Present</p>
-          <p class="description">Developing web applications using JavaScript, PHP, and CSS. Collaborating with development team, implementing new features, and optimizing existing code.</p>
-        </div>
-        <div class="experience-item">
-          <h3 class="job-title">Courier</h3>
-          <p class="company">Courier Company</p>
-          <p class="date">2022 - 2023</p>
-          <p class="description">Package delivery, customer service, time management and route planning. Developing organizational and communication skills.</p>
-        </div>
-        <div class="experience-item">
-          <h3 class="job-title">Hotel Staff</h3>
-          <p class="company">Hotel</p>
-          <p class="date">2021 - 2022</p>
-          <p class="description">Guest service, maintaining service quality, working in multicultural team environment. Developing communication skills and problem-solving abilities.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2 class="card-title">🚀 Projects</h2>
-        <div class="project-item">
-          <h3 class="project-title">
-            <a href="https://www.domowepaczki.pl" target="_blank">domowepaczki.pl</a>
-          </h3>
-          <p class="project-tech">Next.js, React</p>
-          <p class="description">Web application for home made donuts.</p>
-        </div>
-        <div class="project-item">
-          <h3 class="project-title">
-            <a href="https://md-portfolioo.netlify.app/" target="_blank">Portfolio Website</a>
-          </h3>
-          <p class="project-tech">HTML, CSS, JavaScript</p>
-          <p class="description">Responsive portfolio website showcasing projects and skills.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2 class="card-title">⚡ Technical Skills</h2>
+        <h2>Umiejętności</h2>
         <div class="skills">
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">HTML5</span>
-          <span class="skill-tag">CSS3</span>
-          <span class="skill-tag">SCSS</span>
-          <span class="skill-tag">PHP</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Redux</span>
-          <span class="skill-tag">Tailwind CSS</span>
-          <span class="skill-tag">Material-UI</span>
+            <ul>
+                <li>HTML5, CSS3, JavaScript (ES6+)</li>
+                <li>React, Next.js</li>
+                <li>Git, GitHub</li>
+                <li>Responsive Web Design</li>
+                <li>Podstawy Node.js</li>
+            </ul>
         </div>
-      </div>
 
-      <div class="card">
-        <h2 class="card-title">🎓 Education</h2>
-        <div class="education-item">
-          <h3 class="degree-title">Computer Science</h3>
-          <p class="school">WSB University (Wyższa Szkoła Bankowa)</p>
-          <p class="date">2020 - 2024</p>
-          <p class="description">Bachelor's degree in Computer Science. Gained fundamental knowledge in programming, databases, software engineering, and web technologies.</p>
+        <h2>Projekty</h2>
+        <div class="projects">
+            <div class="project-item">
+                <div class="project-title">
+                    <a href="https://www.domowepaczki.pl" target="_blank">domowepaczki.pl</a>
+                </div>
+                <div class="project-tech">Next.js, React</div>
+                <div class="description">Web application for home made donuts.</div>
+            </div>
+            <div class="project-item">
+                <div class="project-title">
+                    <a href="https://md-portfolioo.netlify.app/" target="_blank">Portfolio Website</a>
+                </div>
+                <div class="project-tech">HTML, CSS, JavaScript</div>
+                <div class="description">Responsive portfolio website showcasing projects and skills. Utilized modern CSS techniques and JavaScript to create interactive user experience.</div>
+            </div>
         </div>
-      </div>
 
-      <div class="card">
-        <h2 class="card-title">🌍 Languages</h2>
-        <div class="languages">
-          <div class="language-item">Polish <span class="language-level">Native</span></div>
-          <div class="language-item">English <span class="language-level">C1</span></div>
+        <h2>Doświadczenie</h2>
+        <div class="experience">
+            <div class="exp-item">
+                <strong>Frontend Developer (freelance)</strong> <br>
+                2024 – obecnie<br>
+                <span class="description">
+                    Tworzenie stron internetowych dla małych firm i osób prywatnych, wdrażanie responsywnych rozwiązań, optymalizacja SEO.
+                </span>
+            </div>
         </div>
-      </div>
 
-      <div class="card">
-        <h2 class="card-title">🎯 Interests</h2>
-        <div class="hobbies">
-          <span class="hobby-tag">Programming</span>
-          <span class="hobby-tag">New Technologies</span>
-          <span class="hobby-tag">Sports</span>
-          <span class="hobby-tag">Gaming</span>
-          <span class="hobby-tag">Travel</span>
+        <h2>Edukacja</h2>
+        <div class="education">
+            <div>
+                <strong>Informatyka</strong><br>
+                Politechnika Przykładowa, 2021 – obecnie
+            </div>
         </div>
-      </div>
-
-      <div class="card full-width">
-        <div class="objectives">
-          <h2 style="margin-bottom: 15px; font-size: 1.3em;">🎯 Career Objectives</h2>
-          <p>Passionate frontend developer with solid foundation in JavaScript and React. I strive for continuous skill development in modern web technologies and creating intuitive, responsive user interfaces. Seeking growth opportunities in a dynamic team as a Junior Frontend Developer.</p>
-        </div>
-      </div>
     </div>
-  </div>
 </body>
 </html>
